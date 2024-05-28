@@ -29,8 +29,9 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
   counter++;
-  if (counter == 5) {
+  if (humanScore == 5 || computerScore == 5) {
     displayWinner();
+    return 0;
   }
   if (humanChoice == "Rock" && computerChoice == "Scissors") {
     humanScore++;
