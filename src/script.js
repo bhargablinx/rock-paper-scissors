@@ -71,31 +71,16 @@ function choseRPS() {
 
 function checkWinner() {
     if (symbol["player1"] === symbol["player2"]) {
-        // console.log("Tie");
         return;
     } else if (
-        symbol["player1"] === "rock" &&
-        symbol["player2"] === "scissors"
+        (symbol["player1"] === "rock" && symbol["player2"] === "scissors") ||
+        (symbol["player1"] === "paper" && symbol["player2"] === "rock") ||
+        (symbol["player1"] === "scissors" && symbol["player2"] === "paper")
     ) {
         score["player1"]++;
-        // console.log("Player 1 Wons: rock beats scissors");
-        return;
-    } else if (symbol["player1"] === "paper" && symbol["player2"] === "rock") {
-        score["player1"]++;
-        // console.log("Player 1 Wons: paper beats rock");
-        return;
-    } else if (
-        symbol["player1"] === "scissors" &&
-        symbol["player2"] === "paper"
-    ) {
-        score["player1"]++;
-        // console.log("Player 1 Wons: scissors beats paper");
         return;
     } else {
         score["player2"]++;
-        // console.log(
-        //     `Player 2 won: ${symbol["player2"]} beats ${symbol["player1"]}`
-        // );
         return;
     }
 }
