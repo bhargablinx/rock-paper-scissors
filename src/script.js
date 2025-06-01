@@ -50,7 +50,7 @@ function enableBtn(btnName) {
         });
     } else {
         resetSymbols();
-        alert("Game Stoped");
+        alert("Game Stopped");
         resetScore();
         reStartBtn.classList.add("hidden");
         stopBtn.classList.add("hidden");
