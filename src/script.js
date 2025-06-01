@@ -1,5 +1,6 @@
 const startBtn = document.querySelector(".start-btn");
 const reStartBtn = document.querySelector(".restart-btn");
+const stopBtn = document.querySelector(".stop-btn");
 const allCtrBtns = document.querySelectorAll(".ctr-btn");
 const score = {
     player1: 0,
@@ -16,7 +17,12 @@ startBtn.addEventListener("click", () => {
 });
 
 reStartBtn.addEventListener("click", () => {
-    enableBtn();
+    alert("Game Re-Started");
+    resetScore();
+});
+
+stopBtn.addEventListener("click", () => {
+    enableBtn("stop");
 });
 
 allCtrBtns.forEach((item) => {
@@ -24,6 +30,7 @@ allCtrBtns.forEach((item) => {
         symbol["player1"] = e.target.textContent.trim().toLowerCase();
         symbol["player2"] = choseRPS();
         if (symbol["player1"] !== "" && symbol["player2"] !== "") checkWinner();
+        updateScore();
     });
 });
 
@@ -31,12 +38,16 @@ function enableBtn(btnName) {
     if (btnName === "restart") {
         alert("Game Started");
         reStartBtn.classList.remove("hidden");
+        stopBtn.classList.remove("hidden");
         startBtn.classList.add("hidden");
         allCtrBtns.forEach((item) => {
             item.disabled = false;
         });
     } else {
+        alert("Game Stoped");
+        resetScore();
         reStartBtn.classList.add("hidden");
+        stopBtn.classList.add("hidden");
         startBtn.classList.remove("hidden");
         allCtrBtns.forEach((item) => {
             item.disabled = true;
@@ -79,4 +90,15 @@ function checkWinner() {
         );
         return;
     }
+}
+
+function updateScore() {
+    document.querySelector(".p1-score").textContent = score["player1"];
+    document.querySelector(".p2-score").textContent = score["player2"];
+}
+
+function resetScore() {
+    score["player1"] = 0;
+    score["player2"] = 0;
+    updateScore();
 }
