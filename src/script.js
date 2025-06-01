@@ -71,6 +71,7 @@ function choseRPS() {
 
 function checkWinner() {
     if (symbol["player1"] === symbol["player2"]) {
+        displayWinner("Tie");
         return;
     } else if (
         (symbol["player1"] === "rock" && symbol["player2"] === "scissors") ||
@@ -78,9 +79,15 @@ function checkWinner() {
         (symbol["player1"] === "scissors" && symbol["player2"] === "paper")
     ) {
         score["player1"]++;
+        displayWinner(
+            `Player 1 Wins: ${symbol["player1"]} beats ${symbol["player2"]}`
+        );
         return;
     } else {
         score["player2"]++;
+        displayWinner(
+            `Player 2 Wins: ${symbol["player2"]} beats ${symbol["player1"]}`
+        );
         return;
     }
 }
@@ -107,4 +114,15 @@ function displayResult() {
         symbol["player1"].toUpperCase();
     document.querySelector(".p2-output").textContent =
         symbol["player2"].toUpperCase();
+}
+
+function displayWinner(winner) {
+    const el = document.querySelector(".win-status");
+
+    el.classList.remove("animate-bounce");
+
+    void el.offsetWidth;
+
+    el.textContent = winner;
+    el.classList.add("animate-bounce");
 }
