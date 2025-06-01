@@ -9,8 +9,16 @@
     </head>
     <body class="bg-slate-900 text-teal-500">
         <nav class="text-center text-xl md:text-2xl font-bold my-5 mb-16">
-            ROCK PAPER SCISSORS
+            ROCK PAPER SCISSORS <br />
+            <span class="opacity-15">(You Can't Win)</span>
         </nav>
+        <!-- OUTPUT OF GAME -->
+        <div
+            class="flex justify-center mb-5 border w-[400px] h-[50px] mx-auto items-center gap-12 border-slate-800 rounded-sm"
+        >
+            <div class="p1-output text-teal-800">PLAYER</div>
+            <div class="p2-output text-teal-800">COMPUTER</div>
+        </div>
         <!-- SCORE CARD -->
         <div class="text-center text-xl tracking-[5px] font-semibold">
             <span class="p1-score">0</span>:<span class="p2-score">0</span>
@@ -21,19 +29,19 @@
         >
             <button
                 disabled
-                class="ctr-btn bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
+                class="ctr-btn cursor-not-allowed bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 hover:shadow-xl hover:bg-teal-400 transition"
             >
                 ROCK
             </button>
             <button
                 disabled
-                class="ctr-btn bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
+                class="ctr-btn cursor-not-allowed bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 hover:shadow-xl hover:bg-teal-400 transition"
             >
                 PAPER
             </button>
             <button
                 disabled
-                class="ctr-btn bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
+                class="ctr-btn cursor-not-allowed bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 hover:shadow-xl hover:bg-teal-400 transition"
             >
                 SCISSORS
             </button>

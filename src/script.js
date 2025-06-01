@@ -31,19 +31,25 @@ allCtrBtns.forEach((item) => {
         symbol["player2"] = choseRPS();
         if (symbol["player1"] !== "" && symbol["player2"] !== "") checkWinner();
         updateScore();
+        displayResult();
     });
 });
 
 function enableBtn(btnName) {
     if (btnName === "restart") {
+        resetSymbols();
         alert("Game Started");
+        resetScore();
         reStartBtn.classList.remove("hidden");
         stopBtn.classList.remove("hidden");
         startBtn.classList.add("hidden");
         allCtrBtns.forEach((item) => {
             item.disabled = false;
+            item.classList.remove("cursor-not-allowed");
+            item.classList.add("cursor-pointer");
         });
     } else {
+        resetSymbols();
         alert("Game Stoped");
         resetScore();
         reStartBtn.classList.add("hidden");
@@ -51,6 +57,8 @@ function enableBtn(btnName) {
         startBtn.classList.remove("hidden");
         allCtrBtns.forEach((item) => {
             item.disabled = true;
+            item.classList.add("cursor-not-allowed");
+            item.classList.remove("cursor-pointer");
         });
     }
 }
@@ -63,31 +71,31 @@ function choseRPS() {
 
 function checkWinner() {
     if (symbol["player1"] === symbol["player2"]) {
-        console.log("Tie");
+        // console.log("Tie");
         return;
     } else if (
         symbol["player1"] === "rock" &&
         symbol["player2"] === "scissors"
     ) {
         score["player1"]++;
-        console.log("Player 1 Wons: rock beats scissors");
+        // console.log("Player 1 Wons: rock beats scissors");
         return;
     } else if (symbol["player1"] === "paper" && symbol["player2"] === "rock") {
         score["player1"]++;
-        console.log("Player 1 Wons: paper beats rock");
+        // console.log("Player 1 Wons: paper beats rock");
         return;
     } else if (
         symbol["player1"] === "scissors" &&
         symbol["player2"] === "paper"
     ) {
         score["player1"]++;
-        console.log("Player 1 Wons: scissors beats paper");
+        // console.log("Player 1 Wons: scissors beats paper");
         return;
     } else {
         score["player2"]++;
-        console.log(
-            `Player 2 won: ${symbol["player2"]} beats ${symbol["player1"]}`
-        );
+        // console.log(
+        //     `Player 2 won: ${symbol["player2"]} beats ${symbol["player1"]}`
+        // );
         return;
     }
 }
@@ -101,4 +109,17 @@ function resetScore() {
     score["player1"] = 0;
     score["player2"] = 0;
     updateScore();
+}
+
+function resetSymbols() {
+    symbol["player1"] = "";
+    symbol["player2"] = "";
+    displayResult();
+}
+
+function displayResult() {
+    document.querySelector(".p1-output").textContent =
+        symbol["player1"].toUpperCase();
+    document.querySelector(".p2-output").textContent =
+        symbol["player2"].toUpperCase();
 }
