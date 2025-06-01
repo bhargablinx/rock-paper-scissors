@@ -8,7 +8,7 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body class="bg-slate-900 text-teal-500">
-        <nav class="text-center text-2xl font-bold my-5 mb-10">
+        <nav class="text-center text-xl md:text-2xl font-bold my-5 mb-16">
             ROCK PAPER SCISSORS
         </nav>
         <!-- SCORE CARD -->
@@ -16,21 +16,33 @@
             <span>0</span>:<span>0</span>
         </div>
         <!-- RPS Buttons -->
-        <div class="flex flex-col justify-center mt-5 items-center">
+        <div
+            class="flex flex-col justify-center mt-6 items-center tracking-wide"
+        >
             <button
-                class="bg-teal-500 text-slate-950 m-3 w-[150px] p-2 rounded-md font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
+                class="bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
             >
                 ROCK
             </button>
             <button
-                class="bg-teal-500 text-slate-950 m-3 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
+                class="bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
             >
                 PAPER
             </button>
             <button
-                class="bg-teal-500 text-slate-950 m-3 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
+                class="bg-teal-500 text-slate-950 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-teal-400 transition"
             >
                 SCISSORS
+            </button>
+            <button
+                class="text-teal-500 border border-teal-500 mt-6 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-slate-800 transition"
+            >
+                Start
+            </button>
+            <button
+                class="hidden text-teal-500 border border-teal-500 mt-6 m-4 w-[150px] p-2 rounded-lg font-mono font-bold shadow-lg shadow-teal-800 cursor-pointer hover:shadow-xl hover:bg-slate-800 transition"
+            >
+                Re-Start
             </button>
         </div>
     </body>
